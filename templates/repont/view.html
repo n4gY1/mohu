@@ -1,0 +1,86 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} | Megtekintés {% endblock title %}
+
+
+{% block content %}
+
+<div class="card w-100 m-auto bg-dark text-light mobile-card">
+
+    <div class="card-body">
+        <div class="card-image text-center p-3"><img src="/static/img/{{repont.get_state_value}}.png"> </div>
+        <div class="card-title">REPONT - {{repont.name}}</div>
+        <hr>
+        <div class="row">
+            <div class="col-1"><i class="bi bi-geo-alt"></i></div>
+            <div class="col-11"><a href="https://www.google.com/maps/place/{{repont.lat}},{{repont.lon}}" target="_blank">Megnyitás</a></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"><i class="bi bi-flag"></i></div>
+            <div class="col-11">{{repont.get_state.get_state_display}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-1"><i class="bi bi-clock"></i></div>
+            <div class="col-11">{{repont.get_state.created_at}}</div>
+        </div>
+        <hr>
+        <p>Összes jelentés: {{repont.get_statements.count}}</p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="card bg-dark text-light my-3 m-auto mobile-card">
+    <div class="card-header">Bejelentés</div>
+    <div class="card-body ">
+
+
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" name="status" value="1" class="btn btn-success w-100 my-3" style="float:left;display:block">Működik</button>
+                </div>
+                <div class="col-6">
+                    <button type="submit" name="status" value="2" class="btn btn-danger w-100 my-3" style="float:left;display:block">Nem működik</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<p class="text-center">Eddigi bejelentések</p>
+
+{% for statement in statements %}
+    <div class="card bg-dark text-light my-2 m-auto mobile-card">
+        <div class="card-body">
+            <div class="card-title"><strong>{{statement.created_at}}</strong></div>
+            <div class="row">
+                <div class="col-2"><img src="/static/img/{{statement.state}}.png"></div>
+                <div class="col-10"><p>{{statement.description}}</p></div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% empty %}
+<p class="text-center p-3">Nincs még jelentés</p>
+{% endfor %}
+<div class="py-5"></div><!-- szünet a navbar miatt -->
+
+{% endblock content %}

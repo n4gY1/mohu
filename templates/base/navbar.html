@@ -1,0 +1,16 @@
+<nav class="navbar navbar-dark bg-dark fixed-bottom">
+    <div class="container-fluid d-flex justify-content-around">
+        <a href="{% url 'index' %}" class="btn btn-dark d-flex align-items-center">
+            <i class="bi bi-house-fill me-2"></i>
+            Térkép
+        </a>
+        <a href="{% url 'add_repont' %}" class="btn btn-dark d-flex align-items-center">
+            <i class="bi bi-plus-circle-fill me-2"></i>
+           Hozzáadás
+        </a>
+        <a href="{% url 'info' %}" class="btn btn-dark d-flex align-items-center">
+            <i class="bi bi-info-circle-fill me-2"></i>
+            Info
+        </a>
+    </div>
+</nav>

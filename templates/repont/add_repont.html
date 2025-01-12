@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} | Megtekintés {% endblock title %}
+
+
+{% block content %}
+
+<style>
+        #map {
+            width: 100%;
+            margin:0px auto;
+            height: 450px;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .image-container img {
+            display: block;
+            max-width: 100%;
+
+        }
+</style>
+
+<div id="map"></div>
+
+
+<script src="{% static 'js/add_repont.js' %}"></script>
+
+
+
+
+
+
+<div class="card w-100 m-auto bg-dark text-light mobile-card">
+    <div class="card-body">
+        <div class="card-title">Repont felvitele</div>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input name="lat" id="lat" type="hidden">
+            <input name="lon" id="lon" type="hidden">
+            <button type="submit" class="btn btn-success w-100 my-2">Mentés</button>
+        </form>
+    </div>
+
+
+</div>
+
+<div class="py-5"></div><!-- szünet a navbar miatt -->
+{% endblock content %}

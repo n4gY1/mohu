@@ -1,0 +1,80 @@
+* {
+    margin:0px;
+}
+
+:root {
+    --light-color:#CCC;
+    --dark-color:#222;
+
+}
+
+body {
+    min-height:100vh;
+    background-color:#222;
+    color:var(--light-color);
+}
+
+textarea::placeholder {
+    color: #6c757d !important; /* Világosabb szürke */
+    opacity: 1;    /* 100%-os láthatóság */
+}
+
+.mobile-card {
+    width:100%;
+}
+
+
+@media only screen and (min-width: 50rem) {
+    .mobile-card {
+        width:50% !important;
+    }
+}
+
+.gps {
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:1000;
+}
+
+
+
+.messages {
+    padding:0.5rem 1rem;
+    color:var(--light-color);
+    background-color:var(--dark-color);
+    width:20rem;
+    margin:0 auto;
+    position:fixed;
+    top:30px;
+    left:50%;
+    font-size:1.5rem;
+    z-index:1000;
+    border-radius:1rem;
+    transform:translateX(-50%);
+    animation: slide-down-up 4s ease-in-out forwards;
+
+}
+
+@keyframes slide-down-up {
+    0% {
+        top: -100px;
+    }
+    10% {
+        top: 30px; /* Érkezik a helyére */
+    }
+    90% {
+        top: 30px; /* 2 másodpercig ott marad */
+    }
+    100% {
+        top: -100px; /* Visszacsúszik */
+    }
+}
+
+.card input.form-control {
+    border: 1px solid #333 !important;
+}
+.card textarea.form-control {
+    border: 1px solid #333 !important;
+    margin-top: 0.5rem;
+}

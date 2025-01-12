@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} | Megtekintés {% endblock title %}
+
+
+{% block content %}
+
+<div class="card w-100 m-auto bg-dark text-light mobile-card">
+
+    <div class="card-body">
+
+        <div class="card-title">Információ</div>
+        <hr>
+        <p>
+            A MOHU REPONT üvegvisszaváltó alkalmazás egyelőre szándékosan nem szeretné közzé tenni, hogy a visszaváltó
+            automaták közül melyik műkődik és melyik nem. Pedig valószínűleg minden lehetőségük meg lenne rá.
+        </p>
+        <p>
+            Gondolom mást is bosszantott már, hogy mikor az üvegeket vissza szeretnék váltani és utána vásárolni, akkor
+            szembesülnek vele, hogy az üvegvisszaváltó nem működik. Így feleslegesen sétáltattuk a szatornyi üveget.
+        </p>
+        <p>
+            Ezt az alkalmazást azért is hoztam létre, hogy ha Önök bejelentik egy meglévő Repont visszaváltó gép működését,
+            mások tudják, érdemes-e megindulni az üvegekkel. <strong>De ehhez szükség van Önökre. Hogy ha tudják, jelentsék a gépek
+            állapotát, így segítve másokat.</strong>
+        </p>
+        <p>
+            De amint a Repont alkalmazás végre közzé teszi az üvegvisszaváltó gépek működési állapotát, ezt a weboldalt beszüntetem.
+            Addig viszont segítsük egymást azzal, hogy tájékoztassunk másokat, egy megadott helyen megfelelően üzemelnek a gépek vagy sem.
+        </p>
+        <p>
+            <strong>
+            Az oldal használata ingyenes és regisztrációt sem követel. De ha Ön hasznosnak találja az oldalt, kérem támogasson
+            legalább egy kávé árával, hogy az oldal fejlődhessen és ne egy kis raspberry pi-n fusson. Paypal-on küldve akár 100 Ft-nak is
+            örülünk, hogy a szerver futtatásának és fejlesztésének a minimális költsége megtérüljön .
+
+            Köszönöm!
+            </strong>
+        </p>
+        <div class="card-image" style="margin:0px auto">
+            <img src="{% static 'img/qr.png' %}" alt="paypal" style="width:100%;image-position:cover">
+        </div>
+        <p class="text-small text-center py-3">
+            A QR kódot beolvasva paypal alkalmazással támogathatja az oldal működését!
+        </p>
+
+
+
+
+    </div>
+
+
+
+
+</div>
+<div class="py-5"></div><!-- szünet a navbar miatt -->
+{% endblock content %}

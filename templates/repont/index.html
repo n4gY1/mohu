@@ -1,0 +1,24 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %} | Index {% endblock title %}
+
+{% block content %}
+
+<div id="map" class="container"></div>
+<style>
+    #map {
+        @media only screen and (max-width: 600px) {
+            width:80%;
+        }
+        height: 100vh;
+    }
+</style>
+
+<i class="bi bi-pin-map gps" id="gps" ></i>
+
+
+<script src="{% static 'js/index_map.js' %}"></script>
+
+
+{% endblock content %}
