@@ -8,7 +8,7 @@ from repont.models import Statement, Repont
 class StatementForm(forms.ModelForm):
     description = forms.CharField(required=False,widget=forms.Textarea(attrs={
         "rows":3,
-        "placeholder":"Teli van vagy egyáltalán nemm működik vagy csak nem mindegyik berendezés működik..."
+        "placeholder":"Teli van, vagy egyáltalán nem működik, vagy csak nem mindegyik berendezés működik..."
     }))
     class Meta:
         model = Statement
