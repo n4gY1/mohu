@@ -6,7 +6,7 @@ class RepontAdmin(admin.ModelAdmin):
     list_display = ["name"]
 
 class StatementAdmin(admin.ModelAdmin):
-    list_display = ["repont__name","ip","state"]
+    list_display = ["repont","ip","state"]
 
 
 # Register your models here.
