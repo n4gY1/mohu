@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r=34p8gsg^6k-c#)plt557dut6z%(j9v8sa3h2@k&9ql^mthgc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -119,7 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static',]
+#STATICFILES_DIRS = [BASE_DIR / 'static',] #ez meg talán nem lehet debug true alatt
+STATIC_ROOT = BASE_DIR / 'static' # ez kell a debug false miatt
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
