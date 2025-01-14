@@ -98,14 +98,21 @@ def add_repont_view(request):
     if request.method == "POST":
         form = RepontForm(request.POST)
         if form.is_valid():
-            repont = form.save(commit=False)
-            repont.created_ip = get_client_ip(request)
-            repont.created_at = datetime.datetime.now()
-            repont.lat = request.POST.get("lat")
-            repont.lon = request.POST.get("lon")
-            repont.save()
-            messages.success(request,message="Sikeres rögzítés")
-            return redirect("index")
+            try:
+                repont = form.save(commit=False)
+                repont.created_ip = get_client_ip(request)
+                repont.created_at = datetime.datetime.now()
+                if request.POST.get("lat") != '' and request.POST.get("lon") != '':
+                    repont.lat = request.POST.get("lat")
+                    repont.lon = request.POST.get("lon")
+                    repont.save()
+                    messages.success(request,message="Sikeres rögzítés")
+                    return redirect("index")
+                else:
+                    messages.warning(request,"GPS koordínáták hiányoznak. Kérjük a kérdőjel ikont mozgassa a megfelelő helyre")
+            except Exception as e:
+                print(str(e))
+
 
     context = {
         "form":form

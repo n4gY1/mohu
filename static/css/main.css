@@ -28,6 +28,9 @@ textarea::placeholder {
     .mobile-card {
         width:50% !important;
     }
+    .messages {
+        font-size:1rem;
+    }
 }
 
 .gps {
@@ -48,17 +51,17 @@ textarea::placeholder {
     position:fixed;
     top:30px;
     left:50%;
-    font-size:1.5rem;
+    font-size:1.2rem;
     z-index:1000;
     border-radius:1rem;
     transform:translateX(-50%);
-    animation: slide-down-up 4s ease-in-out forwards;
+    animation: slide-down-up 6s ease-in-out forwards;
 
 }
 
 @keyframes slide-down-up {
     0% {
-        top: -100px;
+        top: -300px;
     }
     10% {
         top: 30px; /* Érkezik a helyére */
@@ -67,7 +70,7 @@ textarea::placeholder {
         top: 30px; /* 2 másodpercig ott marad */
     }
     100% {
-        top: -100px; /* Visszacsúszik */
+        top: -300px; /* Visszacsúszik */
     }
 }
 

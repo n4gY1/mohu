@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-r=34p8gsg^6k-c#)plt557dut6z%(j9v8sa3h2@k&9ql^mthgc'
-
+CSRF_TRUSTED_ORIGINS = ['https://repont.duckdns.org','http://127.0.0.1']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["repont.duckdns.org","127.0.0.1"]
 
 
 # Application definition
@@ -112,7 +112,7 @@ TIME_ZONE = 'Europe/Budapest'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

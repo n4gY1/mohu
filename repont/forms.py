@@ -23,6 +23,10 @@ class StatementForm(forms.ModelForm):
 
 
 class RepontForm(forms.ModelForm):
+    description = forms.CharField(required=False, widget=forms.Textarea(attrs={
+        "rows": 3,
+        "placeholder": "Az üzlettel / repont automatával kapcsolatos megjegyzés. Elhelyezkedés, nyitvatartás stb..."
+    }))
     class Meta:
         model = Repont
         fields = ["name","description"]
