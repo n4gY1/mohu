@@ -25,6 +25,12 @@
             <div class="col-1"><i class="bi bi-clock"></i></div>
             <div class="col-11">{{repont.get_state.created_at}}</div>
         </div>
+
+        <div class="row">
+            <div class="col-1"><i class="class=bi bi-pencil-fill"></i></div>
+            <div class="col-11">{{repont.description}}</div>
+        </div>
+
         <hr>
         <p>Összes jelentés: {{repont.get_statements.count}}</p>
 
